@@ -10,6 +10,7 @@ RUN git clone https://github.com/beancount/fava
 
 WORKDIR /tmp/build/fava
 RUN git checkout ${FAVA_VERSION}
+RUN apt-get update && apt-get install -y python3-babel
 RUN make
 RUN make mostlyclean
 
